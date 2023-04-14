@@ -1,0 +1,9 @@
+service: "nest-mono-repo"
+plugins:
+  - serverless-nest-monorepo
+provider:
+  name: aws
+  region: ap-northeast-2
+  runtime: nodejs18.x
+  stage: dev
+frameworkVersion: "3"
