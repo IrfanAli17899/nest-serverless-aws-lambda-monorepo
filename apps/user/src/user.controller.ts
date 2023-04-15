@@ -6,7 +6,7 @@ import { AuthedOnly } from '@libs/core/guards/auth.guard';
 import { User } from '@libs/core/decorators/user.decorator';
 import { UserAttributes } from './entities/user.entity';
 
-@Controller()
+@Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 

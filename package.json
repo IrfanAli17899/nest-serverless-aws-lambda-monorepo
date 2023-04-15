@@ -5,9 +5,14 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
+    "deploy":"chmod +x ./scripts/deploy.sh && ./scripts/deploy.sh",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -26,6 +31,7 @@
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/sequelize": "^9.0.2",
+    "@serverless/compose": "^1.3.0",
     "@vendia/serverless-express": "^4.10.1",
     "aws-lambda": "^1.0.7",
     "joi": "^17.9.1",
@@ -54,6 +60,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "28.0.3",
     "prettier": "^2.3.2",
+    "serverless-dotenv-plugin": "^6.0.0",
     "serverless-nest-monorepo": "^1.1.0",
     "serverless-offline": "^12.0.4",
     "serverless-plugin-optimize": "^4.2.1-rc.1",

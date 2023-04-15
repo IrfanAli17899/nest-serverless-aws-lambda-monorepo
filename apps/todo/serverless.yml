@@ -1,3 +1,4 @@
+useDotenv: true
 service: todo-api
 
 plugins:
@@ -5,10 +6,11 @@ plugins:
   - serverless-plugin-typescript
   - serverless-tscpaths
   - serverless-plugin-optimize
+  - serverless-dotenv-plugin
 
 provider:
   name: aws
-  stage: dev
+  # stage: dev
   region: ap-northeast-2
   runtime: nodejs18.x
   memorySize: 512
@@ -31,7 +33,7 @@ functions:
     events:
       - http:
           method: ANY
-          path: /todo
+          path: /
           cors:
             origins:
               - '*'

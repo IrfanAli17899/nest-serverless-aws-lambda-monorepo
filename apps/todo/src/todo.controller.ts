@@ -5,7 +5,7 @@ import { AuthedOnly } from '@libs/core/guards/auth.guard';
 import { UserAttributes } from '@apps/user/entities/user.entity';
 import { CreateTodoDto } from './dto/create-todo.dto';
 
-@Controller()
+@Controller('todo')
 export class TodoController {
   constructor(private readonly todoService: TodoService) {}
 
