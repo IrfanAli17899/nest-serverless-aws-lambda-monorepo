@@ -1,5 +1,5 @@
 #!/bin/bash
-
+stage=$1
 # Read the JSON file into a variable
 json=$(cat nest-cli.json)
 # Filter the projects with type equal to "application"
@@ -9,5 +9,5 @@ applications=$(echo "$json" | jq '.projects[] | select(.type == "application")')
 for app in $(echo "${applications}" | jq -r '.root'); do
     appname=$(echo "${app}" | sed 's/^apps\///')
   echo "Running command for application: ${appname}"
-  serverless mono --nestApp ${appname} --command deploy --stage production
+  serverless mono --nestApp ${appname} --command deploy --extra "--stage $stage"
 done
